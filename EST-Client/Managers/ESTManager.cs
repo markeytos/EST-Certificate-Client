@@ -90,7 +90,7 @@ public class ESTManager
             //Save new certificate with private key
             X509Certificate2 newCertificateWithPrivateKey = new (newCertificate.RawData);
             newCertificateWithPrivateKey = newCertificateWithPrivateKey.CopyWithPrivateKey(rsaKey);
-            await File.WriteAllBytesAsync("newCertificate.pfx", newCertificateWithPrivateKey.Export(X509ContentType.Pkcs12));
+            await File.WriteAllBytesAsync("newCertificate.pfx", newCertificateWithPrivateKey.Export(X509ContentType.Pfx,""));
             return 0;
         }
         catch (Exception ex)
